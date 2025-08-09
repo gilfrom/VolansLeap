@@ -55,6 +55,15 @@
     border-radius: 12px;
     background: conic-gradient(from 45deg, var(--vl-brand), #7c3aed, #22c55e, var(--vl-brand));
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .vl-logo svg {
+    display: block;
+    width: 32px;
+    height: 32px;
   }
 
   .vl-badge {
@@ -103,8 +112,28 @@
 <section class="vl-hero" aria-labelledby="about-title">
   <div class="vl-hero-card">
     <div class="vl-top">
-      <!-- Replace this with your actual logo image if you have one -->
-      <div class="vl-logo" aria-hidden="true"></div>
+      <!-- Draco volans SVG logo (flying dragon) -->
+      <div class="vl-logo" aria-label="Draco volans logo">
+        <svg viewBox="0 0 44 44" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <!-- Wing (left) -->
+            <path d="M10 29 Q6 20 14 14 Q13 19 18 21 Q13 16 16 10 Q22 16 22 25 Q18 18 10 29 Z"
+                  fill="#5c6ac4" opacity="0.80"/>
+            <!-- Wing (right) -->
+            <path d="M34 29 Q38 20 30 14 Q31 19 26 21 Q31 16 28 10 Q22 16 22 25 Q26 18 34 29 Z"
+                  fill="#7c3aed" opacity="0.80"/>
+            <!-- Body/Spine -->
+            <path d="M22 25 Q23 35 22 39 Q21 35 22 25 Z"
+                  stroke="#0f172a" stroke-width="2" fill="#22c55e" opacity="0.8"/>
+            <!-- Head -->
+            <circle cx="22" cy="9" r="4" fill="#0f172a"/>
+            <!-- Eye -->
+            <circle cx="23.5" cy="10" r="1" fill="#fff"/>
+            <!-- Tail -->
+            <path d="M22 39 Q17 42 15 36" stroke="#0f172a" stroke-width="1.2" fill="none"/>
+          </g>
+        </svg>
+      </div>
       <span class="vl-badge">VolansLeap Inc.</span>
     </div>
 
