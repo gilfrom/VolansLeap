@@ -1,0 +1,127 @@
+<!-- VolansLeap – About/hero snippet (drop-in HTML+CSS)
+     How to use: paste this block where you want the hero/about section to appear.
+     You can tweak brand colors in the :root variables below. -->
+
+<style>
+  :root {
+    --vl-brand: #5c6ac4;   /* Primary brand color */
+    --vl-ink: #0f172a;     /* Text */
+    --vl-muted: #475569;   /* Secondary text */
+    --vl-bg: #ffffff;      /* Card background */
+    --vl-accent: #dbeafe;  /* Subtle bg accent */
+    --vl-radius: 18px;     /* Corner radius */
+    --vl-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  }
+
+  .vl-hero {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--vl-ink);
+    display: grid;
+    place-items: center;
+    padding: clamp(24px, 4vw, 48px);
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  }
+
+  .vl-hero-card {
+    width: min(100%, 980px);
+    background: var(--vl-bg);
+    border-radius: var(--vl-radius);
+    box-shadow: var(--vl-shadow);
+    padding: clamp(20px, 4vw, 48px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vl-hero-card::after {
+    content: "";
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(closest-side, var(--vl-accent), transparent 70%);
+    transform: rotate(8deg);
+    pointer-events: none;
+  }
+
+  .vl-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .vl-logo {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: conic-gradient(from 45deg, var(--vl-brand), #7c3aed, #22c55e, var(--vl-brand));
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+  }
+
+  .vl-badge {
+    font-size: 13px; font-weight: 600; letter-spacing: .02em;
+    color: var(--vl-brand);
+    background: #eef2ff;
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
+
+  .vl-title { 
+    font-size: clamp(28px, 5vw, 46px);
+    line-height: 1.08; 
+    margin: 6px 0 12px 0;
+  }
+
+  .vl-lead {
+    font-size: clamp(16px, 2.2vw, 20px);
+    color: var(--vl-muted);
+    max-width: 70ch;
+    margin: 0 0 22px 0;
+  }
+
+  .vl-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .vl-btn {
+    appearance: none; border: 0; cursor: pointer; text-decoration: none;
+    padding: 12px 16px; border-radius: 12px; font-weight: 600; font-size: 15px;
+  }
+  .vl-btn.primary { background: var(--vl-brand); color: white; }
+  .vl-btn.ghost { background: rgba(15, 23, 42, 0.04); color: var(--vl-ink); }
+  .vl-btn.primary:focus-visible, .vl-btn.ghost:focus-visible { outline: 3px solid #c7d2fe; outline-offset: 2px; }
+
+  /* Optional small footer row */
+  .vl-foot { margin-top: 20px; font-size: 14px; color: var(--vl-muted); }
+
+  /* Dark-mode friendly (inherits if page uses prefers-color-scheme) */
+  @media (prefers-color-scheme: dark) {
+    :root { --vl-bg: #0b1220; --vl-ink: #e5e7eb; --vl-muted: #cbd5e1; --vl-accent: rgba(59,130,246,.18); }
+    .vl-hero { background: linear-gradient(135deg, #040814 0%, #0b1220 100%); }
+    .vl-btn.ghost { background: rgba(255,255,255,0.06); color: var(--vl-ink); }
+    .vl-badge { background: rgba(99,102,241,.15); color: #c7d2fe; }
+  }
+</style>
+
+<section class="vl-hero" aria-labelledby="about-title">
+  <div class="vl-hero-card">
+    <div class="vl-top">
+      <!-- Replace this with your actual logo image if you have one -->
+      <div class="vl-logo" aria-hidden="true"></div>
+      <span class="vl-badge">VolansLeap Inc.</span>
+    </div>
+
+    <h1 id="about-title" class="vl-title">We turn bold ideas into impactful realities</h1>
+
+    <p class="vl-lead">
+      From building intuitive apps like <strong>Qeekend</strong> to delivering strategic tech consulting, 
+      VolansLeap blends creativity, innovation, and expertise to help businesses — and people — leap into the future.
+    </p>
+
+    <div class="vl-actions">
+      <a class="vl-btn primary" href="/contact">Work with us</a>
+      <a class="vl-btn ghost" href="/about">Learn more</a>
+    </div>
+
+    <div class="vl-foot">
+      Inspired by <em>Draco volans</em> — the flying dragon — our name reflects our commitment to helping visionary ideas soar.
+    </div>
+  </div>
+</section>
