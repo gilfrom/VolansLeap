@@ -1,39 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volans Leap Inc.</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background-color: #f9f9f9; color: #333; }
-    header { padding: 40px 20px; background-color: #002b36; color: #fff; }
-    header img { width: 120px; }
-    h1 { margin-top: 20px; font-size: 2.5em; }
-    p { max-width: 700px; margin: 20px auto; font-size: 1.2em; line-height: 1.5; }
-    section { padding: 40px 20px; }
-    footer { background-color: #002b36; color: #fff; padding: 20px; font-size: 0.9em; }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="DracoVolans.png" alt="Volans Leap Icon">
-    <h1>Volans Leap Inc.</h1>
-    <p>Transforming ideas into market-leading products through expert product management and cutting-edge AI.</p>
-  </header>
-  <section>
-    <h2>About Us</h2>
-    <p>At Volans Leap Inc., we specialize in product management consulting for large enterprises. Our expertise combines strategic planning, customer-centric thinking, and the transformative power of artificial intelligence to create innovative, customer-facing products. From concept to launch, we ensure your product vision becomes reality.</p>
-  </section>
-  <section>
-    <h2>Our Work</h2>
-    <p>We’ve delivered impactful products like <strong>Qeekend</strong>, an AI-driven event discovery platform for families, and we have more groundbreaking solutions on the horizon. Our focus is always on delivering measurable results and sustainable growth for our clients.</p>
-  </section>
-  <section>
-    <h2>Get in Touch</h2>
-    <p>Ready to leap ahead with your next big idea? Contact us today to explore how we can work together.</p>
-  </section>
-  <footer>
-    &copy; 2025 Volans Leap Inc. All rights reserved.
-  </footer>
-</body>
-</html>
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, Briefcase, Rocket, MessageSquare } from "lucide-react";
+
+// Plain React version (no Next.js/shadcn). Tailwind-only styling.
+// Place your logo file at the site root as /DracoVolans.png (or change LOGO_SRC below).
+const LOGO_SRC = "/DracoVolans.png";
+
+import { useState } from "react";
+
+export default function VolansLeapLanding() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="min-h-screen bg-[#FDFBF9] text-[#1C2A2E] antialiased">
+      {/* Header */}
+      <header className="sticky top-0 z-40 border-b border-[#133B3A]/20 bg-[#FDFBF9]/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+          <a href="#home" className="inline-flex items-center gap-2 font-semibold tracking-tight">
+            <img src={LOGO_SRC} alt="VolansLeap Logo" className="h-8 w-8 object-contain" />
+            <span className="text-lg md:text-xl text-[#133B3A]">VolansLeap</span>
+          </a>
+          <nav className="hidden items-center gap-6 text-sm md:flex">
+            <a href="#work" className="transition hover:text-[#D9480F]">Work</a>
+            <a href="#services" className="transition hover:text-[#D9480F]">Services</a>
+            <a href="#about" className="transition hover:text-[#D9480F]">About</a>
+            <a href="#contact" className="transition hover:text-[#D9480F]">Contact</a>
+            <a href="#contact" className="rounded-2xl bg-[#F29F05] px-4 py-2 font-medium text-[#132322] transition hover:bg-[#D9480F] hover:text-white">Let's talk</a>
+          </nav>
+          <button aria-label="Toggle menu" className="md:hidden rounded-xl border border-[#133B3A]/20 px-3 py-2" onClick={() => setOpen(!open)}>
+            <span className="block h-0.5 w-6 bg-[#133B3A] mb-1"></span>
+            <span className="block h-0.5 w-6 bg-[#133B3A] mb-1"></span>
+            <span className="block h-0.5 w-6 bg-[#133B3A]"></span>
+          </button>
+        </div>
+      <div className={`md:hidden ${open ? 'block' : 'hidden'} border-b border-[#133B3A]/10 bg-[#FDFBF9]`}>
+          <div className="mx-auto max-w-6xl px-4 py-3 space-y-2 text-sm">
+            <a href="#work" onClick={() => setOpen(false)} className="block">Work</a>
+            <a href="#services" onClick={() => setOpen(false)} className="block">Services</a>
+            <a href="#about" onClick={() => setOpen(false)} className="block">About</a>
+            <a href="#contact" onClick={() => setOpen(false)} className="block">Contact</a>
+            <a href="#contact" onClick={() => setOpen(false)} className="inline-block rounded-2xl bg-[#F29F05] px-4 py-2 font-medium text-[#132322] transition hover:bg-[#D9480F] hover:text-white">Let's talk</a>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="border-b border-[#133B3A]/20">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-12 md:gap-8 md:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-7"
+          >
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#133B3A]/20 px-3 py-1 text-xs text-[#133B3A] bg-[#F4F2ED]">
+              <Sparkles className="h-3.5 w-3.5 text-[#D9480F]" aria-hidden /> Minimal. Fast. Impactful.
+            </span>
+            <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+              We turn opportunities into {" "}
+              <span className="underline decoration-[#F29F05] decoration-4 underline-offset-4">meaningful products</span>{" "}
+              — fast.
+            </h1>
+            <p className="mt-5 max-w-xl text-[#4E5D5C]">
+              We’re a team of innovators who spot business opportunities and transform them into real solutions in record time. Our first product is <strong>Qeekend</strong> — with more ventures in the works — and we also consult for leading enterprises.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center rounded-2xl bg-[#F29F05] px-5 py-3 text-sm font-medium text-[#132322] transition hover:bg-[#D9480F] hover:text-white"
+              >
+                Start a project <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+              <a href="#work" className="inline-flex items-center text-sm text-[#133B3A] underline-offset-4 hover:underline">
+                See our work
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.aside
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="md:col-span-5"
+          >
+            <div className="rounded-3xl border border-[#133B3A]/20 bg-white">
+              <div className="p-6 md:p-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[#133B3A]/20 bg-[#F4F2ED]">
+                      <Briefcase className="h-5 w-5 text-[#133B3A]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#133B3A]">Enterprise consulting</p>
+                      <p className="text-xs text-[#4E5D5C]">Strategy, prototyping, and delivery.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[#133B3A]/20 bg-[#F4F2ED]">
+                      <Rocket className="h-5 w-5 text-[#D9480F]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#133B3A]">Venture building</p>
+                      <p className="text-xs text-[#4E5D5C]">From zero to launch in weeks.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-[#133B3A]/20 bg-[#F4F2ED]">
+                      <MessageSquare className="h-5 w-5 text-[#F29F05]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-[#133B3A]">Collaborative by design</p>
+                      <p className="text-xs text-[#4E5D5C]">We work with your teams, not around them.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.aside>
+        </div>
+      </section>
+
+      {/* Work */}
+      <section id="work" className="border-b border-[#133B3A]/20">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className="mb-8 flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Selected work</h2>
+              <p className="mt-2 max-w-2xl text-sm text-[#4E5D5C]">A snapshot of what we build. One focused, polished step at a time.</p>
+            </div>
+            <a href="#contact" className="text-sm underline-offset-4 hover:underline text-[#133B3A]">Work with us</a>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-[#133B3A]/20 bg-white p-6 md:p-8">
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-[#133B3A]">Qeekend</h3>
+                  <p className="mt-1 text-sm text-[#4E5D5C]">An AI-powered guide that curates family-friendly events and attractions in Canadian cities — helping busy parents plan great weekends.</p>
+                  <div className="mt-4 flex items-center gap-3">
+                    <a href="https://qeekend.com" target="_blank" rel="noreferrer" className="text-sm underline-offset-4 hover:underline text-[#133B3A]">Visit site</a>
+                    <span className="text-[#B5B9B7]">•</span>
+                    <span className="text-xs text-[#7B8A89]">Launched · Growing</span>
+                  </div>
+                </div>
+                <div className="hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#133B3A]/20 bg-[#F4F2ED] md:flex">
+                  <Rocket className="h-6 w-6 text-[#D9480F]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-[#133B3A]/20 bg-white p-6 md:p-8">
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-[#133B3A]">Enterprise Consulting</h3>
+                  <p className="mt-1 text-sm text-[#4E5D5C]">We partner with large organizations to validate opportunities, design MVPs, and ship fast with measurable impact.</p>
+                  <div className="mt-4 flex items-center gap-3">
+                    <a href="#services" className="text-sm underline-offset-4 hover:underline text-[#133B3A]">Our approach</a>
+                    <span className="text-[#B5B9B7]">•</span>
+                    <span className="text-xs text-[#7B8A89]">Advisory · Prototyping · Delivery</span>
+                  </div>
+                </div>
+                <div className="hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[#133B3A]/20 bg-[#F4F2ED] md:flex">
+                  <Briefcase className="h-6 w-6 text-[#133B3A]" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="border-b border-[#133B3A]/20">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">What we do</h2>
+          <p className="mt-2 max-w-2xl text-sm text-[#4E5D5C]">Simple, outcome‑driven partnerships. Choose one, or mix and match.</p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[{
+              title: "Opportunity Discovery",
+              body: "Research, interviews, and rapid sense‑making to pinpoint high‑value problems.",
+            },{
+              title: "MVP & Prototype",
+              body: "Design, build, and validate experiences in weeks — not quarters.",
+            },{
+              title: "Scale & Handover",
+              body: "Harden, document, and transition to your teams for long‑term growth.",
+            }].map((item) => (
+              <div key={item.title} className="rounded-3xl border border-[#133B3A]/20 bg-white p-6 md:p-7">
+                <h3 className="text-base font-medium text-[#133B3A]">{item.title}</h3>
+                <p className="mt-2 text-sm text-[#4E5D5C]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="border-b border-[#133B3A]/20">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-8">
+            <div className="md:col-span-7">
+              <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Built by practitioners</h2>
+              <p className="mt-3 max-w-2xl text-sm text-[#4E5D5C]">
+                We’ve shipped products, led teams, and worked inside enterprises. That’s why our playbooks are pragmatic and our timelines are short. We focus on clear goals, fast feedback, and momentum.
+              </p>
+            </div>
+            <div className="md:col-span-5">
+              <div className="rounded-3xl border border-[#133B3A]/20 bg-white p-6 md:p-7 text-sm text-[#4E5D5C]">
+                <ul className="space-y-2">
+                  <li>• Hands‑on strategy and execution</li>
+                  <li>• Tight feedback loops and demos</li>
+                  <li>• Outcome metrics from day one</li>
+                  <li>• Knowledge transfer and training</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className="rounded-3xl border border-[#133B3A]/20 bg-white p-8 md:p-12">
+            <div className="grid gap-8 md:grid-cols-12 md:items-start">
+              <div className="md:col-span-7">
+                <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Have an opportunity in mind?</h2>
+                <p className="mt-2 max-w-xl text-sm text-[#4E5D5C]">Tell us about your goals and constraints — we’ll suggest a crisp path to a validated MVP.</p>
+                <form action="https://formspree.io/f/your-form-id" method="POST" className="mt-6 space-y-3">
+                  <div>
+                    <label className="block text-sm text-[#133B3A]">Name</label>
+                    <input name="name" required className="mt-1 w-full rounded-xl border border-[#133B3A]/20 bg-[#FDFBF9] px-3 py-2 outline-none focus:border-[#F29F05]" />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-[#133B3A]">Email</label>
+                    <input name="email" type="email" required className="mt-1 w-full rounded-xl border border-[#133B3A]/20 bg-[#FDFBF9] px-3 py-2 outline-none focus:border-[#F29F05]" />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-[#133B3A]">Message</label>
+                    <textarea name="message" rows={5} required className="mt-1 w-full rounded-xl border border-[#133B3A]/20 bg-[#FDFBF9] px-3 py-2 outline-none focus:border-[#F29F05]"></textarea>
+                  </div>
+                  <button type="submit" className="rounded-2xl bg-[#F29F05] px-5 py-3 text-sm font-medium text-[#132322] transition hover:bg-[#D9480F] hover:text-white">Send</button>
+                </form>
+                <div className="mt-4 text-xs text-[#7B8A89]">Prefer email? <a className="underline" href="mailto:hello@volansleap.com">hello@volansleap.com</a></div>
+              </div>
+              <div className="md:col-span-5">
+                <div className="rounded-2xl border border-[#133B3A]/20 bg-[#FDFBF9] p-5 text-sm text-[#4E5D5C]">
+                  <p className="font-medium text-[#133B3A]">What to include</p>
+                  <ul className="mt-2 list-disc space-y-1 pl-5">
+                    <li>Your challenge and audience</li>
+                    <li>Desired outcomes & timeline</li>
+                    <li>Existing research or constraints</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-[#133B3A]/20">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-8 text-sm text-[#7B8A89]">
+          <p>© {new Date().getFullYear()} VolansLeap Inc.</p>
+          <div className="flex items-center gap-4">
+            <a href="#privacy" className="hover:underline">Privacy</a>
+            <a href="#terms" className="hover:underline">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
