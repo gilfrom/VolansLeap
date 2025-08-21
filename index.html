@@ -287,30 +287,7 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Optional light AJAX submit for Formspree
-    const form = document.getElementById('contactForm');
-    const msg = document.getElementById('formMsg');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        if (!form.action.includes('formspree.io/f/your-form-id')) return; // keep default submit if endpoint replaced
-        e.preventDefault();
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: new FormData(form)
-          });
-          if (res.ok) {
-            msg.hidden = false;
-            form.reset();
-          } else {
-            alert('There was a problem sending your message. Please email hello@volansleap.com.');
-          }
-        } catch {
-          alert('Network error. Please email hello@volansleap.com.');
-        }
-      });
-    }
+   
   </script>
 </body>
 </html>
