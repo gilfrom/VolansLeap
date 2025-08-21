@@ -1,40 +1,320 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volans Leap Inc.</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VOLANS LEAP — We turn opportunities into meaningful products, fast</title>
+  <meta name="description" content="VOLANS LEAP finds high‑value opportunities and transforms them into meaningful products in weeks. Venture building and enterprise consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; background-color: #f9f9f9; color: #333; }
-    header { padding: 40px 20px; background-color: #002b36; color: #fff; }
-    header img { width: 120px; }
-    h1 { margin-top: 20px; font-size: 2.5em; }
-    p { max-width: 700px; margin: 20px auto; font-size: 1.2em; line-height: 1.5; }
-    section { padding: 40px 20px; }
-    footer { background-color: #002b36; color: #fff; padding: 20px; font-size: 0.9em; }
+    :root{
+      --bg: #ffffff;
+      --ink: #0a0a0a;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --card: #f7f7f7;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    .brand{ font-family: "Space Grotesk", Inter, ui-sans-serif, system-ui; letter-spacing: .12em; }
   </style>
 </head>
-<body>
-  <header>
-    <img src="DracoVolans.png" alt="Volans Leap Icon">
-    <h1>Volans Leap Inc.</h1>
-    <p>Transforming ideas into market-leading products through expert product management and cutting-edge AI.</p>
+<body class="min-h-screen bg-[var(--bg)] text-[var(--ink)] antialiased selection:bg-black/10">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-[var(--line)] bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+      <a href="#home" class="inline-flex items-center gap-3">
+        <img src="/VolansLeapLogo.png" alt="VOLANS LEAP Logo" class="h-8 w-8 object-contain" />
+        <span class="brand text-sm md:text-base font-semibold uppercase">VOLANS LEAP</span>
+      </a>
+      <nav class="hidden items-center gap-6 text-sm md:flex">
+        <a href="#work" class="transition hover:text-black">Work</a>
+        <a href="#services" class="transition hover:text-black">Services</a>
+        <a href="#process" class="transition hover:text-black">Process</a>
+        <a href="#about" class="transition hover:text-black">About</a>
+        <a href="#contact" class="transition hover:text-black">Contact</a>
+        <a href="#contact" class="rounded-xl bg-black px-4 py-2 font-medium text-white transition hover:bg-[#111]">Let's talk</a>
+      </nav>
+      <button id="menuBtn" aria-label="Toggle menu" class="md:hidden rounded-xl border border-[var(--line)] px-3 py-2">
+        <span class="block h-0.5 w-6 bg-black mb-1"></span>
+        <span class="block h-0.5 w-6 bg-black mb-1"></span>
+        <span class="block h-0.5 w-6 bg-black"></span>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden border-b border-[var(--line)] bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-3 space-y-2 text-sm">
+        <a href="#work" class="block">Work</a>
+        <a href="#services" class="block">Services</a>
+        <a href="#process" class="block">Process</a>
+        <a href="#about" class="block">About</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="#contact" class="inline-block rounded-xl bg-black px-4 py-2 font-medium text-white transition hover:bg-[#111]">Let's talk</a>
+      </div>
+    </div>
   </header>
-  <section>
-    <h2>About Us</h2>
-    <p>At Volans Leap Inc., we specialize in product management consulting for large enterprises. Our expertise combines strategic planning, customer-centric thinking, and the transformative power of artificial intelligence to create innovative, customer-facing products. From concept to launch, we ensure your product vision becomes reality.</p>
+
+  <!-- Hero -->
+  <section id="home" class="border-b border-[var(--line)]">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-12 md:gap-8 md:py-24">
+      <div class="md:col-span-7">
+        <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-3 py-1 text-xs text-[var(--ink)] bg-[var(--card)]">
+          <span class="inline-block h-3.5 w-3.5 rounded-full bg-black"></span>
+          Minimal. Fast. Impactful.
+        </span>
+        <h1 class="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          We turn opportunities into <span class="underline decoration-black decoration-4 underline-offset-4">meaningful products</span> — fast.
+        </h1>
+        <p class="mt-5 max-w-xl text-[var(--muted)]">
+          We spot high‑value opportunities and transform them into real solutions in record time.
+          First launch: <strong>Qeekend</strong>. More in the works. We also consult for leading enterprises.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="inline-flex items-center rounded-xl bg-black px-5 py-3 text-sm font-medium text-white transition hover:bg-[#111]">
+            Start a project
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#work" class="inline-flex items-center text-sm underline-offset-4 hover:underline">
+            See our work
+          </a>
+        </div>
+      </div>
+      <aside class="md:col-span-5">
+        <div class="rounded-3xl border border-[var(--line)] bg-white">
+          <div class="p-6 md:p-8">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--card)]"></div>
+                <div>
+                  <p class="text-sm font-medium">Enterprise consulting</p>
+                  <p class="text-xs text-[var(--muted)]">Strategy, prototyping, and delivery.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--card)]"></div>
+                <div>
+                  <p class="text-sm font-medium">Venture building</p>
+                  <p class="text-xs text-[var(--muted)]">From zero to launch in weeks.</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--card)]"></div>
+                <div>
+                  <p class="text-sm font-medium">Collaborative by design</p>
+                  <p class="text-xs text-[var(--muted)]">We work with your teams, not around them.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </section>
-  <section>
-    <h2>Our Work</h2>
-    <p>We’ve delivered impactful products like <strong>Qeekend</strong>, an AI-driven event discovery platform for families, and we have more groundbreaking solutions on the horizon. Our focus is always on delivering measurable results and sustainable growth for our clients.</p>
+
+  <!-- Work -->
+  <section id="work" class="border-b border-[var(--line)]">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="mb-8 flex items-end justify-between">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Selected work</h2>
+          <p class="mt-2 max-w-2xl text-sm text-[var(--muted)]">A snapshot of what we build. One focused, polished step at a time.</p>
+        </div>
+        <a href="#contact" class="text-sm underline-offset-4 hover:underline">Work with us</a>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-8">
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <h3 class="text-lg font-semibold">Qeekend</h3>
+              <p class="mt-1 text-sm text-[var(--muted)]">An AI-powered guide that curates family-friendly events and attractions in Canadian cities — helping busy parents plan great weekends.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="https://qeekend.com" target="_blank" rel="noreferrer" class="text-sm underline-offset-4 hover:underline">Visit site</a>
+                <span class="text-gray-300">•</span>
+                <span class="text-xs text-[var(--muted)]">Launched · Growing</span>
+              </div>
+            </div>
+            <div class="hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--card)] md:flex"></div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-8">
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <h3 class="text-lg font-semibold">Enterprise Consulting</h3>
+              <p class="mt-1 text-sm text-[var(--muted)]">We partner with large organizations to validate opportunities, design MVPs, and ship fast with measurable impact.</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="#services" class="text-sm underline-offset-4 hover:underline">Our approach</a>
+                <span class="text-gray-300">•</span>
+                <span class="text-xs text-[var(--muted)]">Advisory · Prototyping · Delivery</span>
+              </div>
+            </div>
+            <div class="hidden h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-[var(--line)] bg-[var(--card)] md:flex"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  <section>
-    <h2>Get in Touch</h2>
-    <p>Ready to leap ahead with your next big idea? Contact us today to explore how we can work together.</p>
+
+  <!-- Services -->
+  <section id="services" class="border-b border-[var(--line)]">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">What we do</h2>
+      <p class="mt-2 max-w-2xl text-sm text-[var(--muted)]">Simple, outcome‑driven partnerships. Choose one, or mix and match.</p>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-7">
+          <h3 class="text-base font-medium">Opportunity Discovery</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Research, interviews, and rapid sense‑making to pinpoint high‑value problems.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-7">
+          <h3 class="text-base font-medium">MVP & Prototype</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Design, build, and validate experiences in weeks — not quarters.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-7">
+          <h3 class="text-base font-medium">Scale & Handover</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Harden, document, and transition to your teams for long‑term growth.</p>
+        </div>
+      </div>
+    </div>
   </section>
-  <footer>
-    &copy; 2025 Volans Leap Inc. All rights reserved.
+
+  <!-- Process -->
+  <section id="process" class="border-b border-[var(--line)]">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">How we work</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6">
+          <p class="text-xs font-semibold text-gray-500">01</p>
+          <h3 class="mt-1 font-medium">Sense & Frame</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">We align on outcomes, users, and constraints. A 2‑week discovery ends with a decisionable brief.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6">
+          <p class="text-xs font-semibold text-gray-500">02</p>
+          <h3 class="mt-1 font-medium">Prototype & Validate</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Design and build an MVP. Demos weekly, metrics from day one.</p>
+        </div>
+        <div class="rounded-3xl border border-[var(--line)] bg-white p-6">
+          <p class="text-xs font-semibold text-gray-500">03</p>
+          <h3 class="mt-1 font-medium">Harden & Handover</h3>
+          <p class="mt-2 text-sm text-[var(--muted)]">Stabilize and transition to your teams with docs and training.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="border-b border-[var(--line)]">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="grid gap-10 md:grid-cols-12 md:gap-8">
+        <div class="md:col-span-7">
+          <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Built by practitioners</h2>
+          <p class="mt-3 max-w-2xl text-sm text-[var(--muted)]">
+            We’ve shipped products, led teams, and worked inside enterprises. Our playbooks are pragmatic and our timelines are short.
+            We focus on clear goals, fast feedback, and momentum.
+          </p>
+        </div>
+        <div class="md:col-span-5">
+          <div class="rounded-3xl border border-[var(--line)] bg-white p-6 md:p-7 text-sm text-[var(--muted)]">
+            <ul class="space-y-2">
+              <li>• Hands‑on strategy and execution</li>
+              <li>• Tight feedback loops and demos</li>
+              <li>• Outcome metrics from day one</li>
+              <li>• Knowledge transfer and training</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+      <div class="rounded-3xl border border-[var(--line)] bg-white p-8 md:p-12">
+        <div class="grid gap-8 md:grid-cols-12 md:items-start">
+          <div class="md:col-span-7">
+            <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Have an opportunity in mind?</h2>
+            <p class="mt-2 max-w-xl text-sm text-[var(--muted)]">Tell us about your goals and constraints — we’ll suggest a crisp path to a validated MVP.</p>
+            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="mt-6 space-y-3">
+              <input type="hidden" name="source" value="volansleap.com" />
+              <div>
+                <label class="block text-sm">Name</label>
+                <input name="name" required class="mt-1 w-full rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 outline-none focus:border-black" />
+              </div>
+              <div>
+                <label class="block text-sm">Email</label>
+                <input name="email" type="email" required class="mt-1 w-full rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 outline-none focus:border-black" />
+              </div>
+              <div>
+                <label class="block text-sm">Message</label>
+                <textarea name="message" rows="5" required class="mt-1 w-full rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 outline-none focus:border-black"></textarea>
+              </div>
+              <button type="submit" class="rounded-xl bg-black px-5 py-3 text-sm font-medium text-white transition hover:bg-[#111]">Send</button>
+              <p id="formMsg" class="mt-2 text-sm text-[var(--muted)]" hidden>Thanks — we’ll be in touch shortly.</p>
+            </form>
+            <div class="mt-4 text-xs text-[var(--muted)]">Prefer email? <a class="underline" href="mailto:hello@volansleap.com">hello@volansleap.com</a></div>
+          </div>
+          <div class="md:col-span-5">
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 text-sm text-[var(--muted)]">
+              <p class="font-medium text-[var(--ink)]">What to include</p>
+              <ul class="mt-2 list-disc space-y-1 pl-5">
+                <li>Your challenge and audience</li>
+                <li>Desired outcomes & timeline</li>
+                <li>Existing research or constraints</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--line)]">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-8 text-sm text-[var(--muted)]">
+      <p>© <span id="year"></span> Volans Leap Inc.</p>
+      <div class="flex items-center gap-4">
+        <a href="#privacy" class="hover:underline">Privacy</a>
+        <a href="#terms" class="hover:underline">Terms</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Optional light AJAX submit for Formspree
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        if (!form.action.includes('formspree.io/f/your-form-id')) return; // keep default submit if endpoint replaced
+        e.preventDefault();
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if (res.ok) {
+            msg.hidden = false;
+            form.reset();
+          } else {
+            alert('There was a problem sending your message. Please email hello@volansleap.com.');
+          }
+        } catch {
+          alert('Network error. Please email hello@volansleap.com.');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
